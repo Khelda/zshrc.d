@@ -9,7 +9,7 @@ set -e -o pipefail
 first=1
 
 _each_repo() {
-    awk 'match($0, /^zplug +"(.*)"/, a) { print a[1] }' < 01-plugins.zsh \
+    awk 'match($0, /^zplug +"(.*)"/, a) { print a[1] }' < 02-plugins.zsh \
         | grep -Ev '(lib|plugins)/'
     echo $_ZPLUG_OHMYZSH
 }
