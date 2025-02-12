@@ -4,6 +4,7 @@
 result
 
 # user private aliases
+13-tokens.zsh
 21-my-functions.zsh
 26-my-aliases.zsh
 99-dirs.zsh

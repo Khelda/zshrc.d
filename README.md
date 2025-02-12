@@ -16,6 +16,9 @@ This configuration works best with Nix, kitty and [my Neovim config](https://git
 
 If you want to tweak it but keep the ability to use updates through `git pull`, I strongly advise using these paths instead of editing the current files to add your own tweaks :
 
+- `13-tokens.zsh`
 - `21-my-functions.zsh`
 - `26-my-aliases.zsh`
 - `~/.zsh_colors`
+
+These files are either in the `.gitignore` or not in the home directory, so don't worry about not committing them.
