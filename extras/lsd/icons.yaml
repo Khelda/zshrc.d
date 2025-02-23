@@ -1,5 +1,6 @@
 name:
   bureau: 
+  data: 
   téléchargements: 
   musique: 
   images: 
@@ -12,7 +13,8 @@ name:
   modèles: 󰅌
   justfile: 󰞷
   nix: 
-
+  features: 
+  
 extension:
   gifv: 
   dsf: 
@@ -56,6 +58,7 @@ extension:
   srctrlprj: 󱁉  # Sourcetrail Project
   jsonnet: 
   libsonnet: 
+  liquid: 
   cmd: 
   pacnew: 󰚰
   pacsave: 󰁯

@@ -107,7 +107,7 @@ function install-deps() {
 function __deps::check_optional() {
     unset __FAILED_DEPS
     typeset -Ag __FAILED_DEPS    # Reset list of failed dependencies
-    __deps::check   neofetch     neofetch
+    __deps::check   fastfetch    fastfetch
     __deps::check   qrencode     qrencode
     __deps::check   gst-play-1.0 gst_all_1.gst-plugins-base
     __deps::check   nom          nix-output-monitor
@@ -122,6 +122,7 @@ function __deps::check_optional() {
     __deps::check   bear         bear
     __deps::check   mdcat        mdcat
     __deps::check   jello        jello
+    __deps::check   jsonnet      jsonnet
     __deps::check   pgcli        pgcli
     __deps::check   darkhttpd    darkhttpd
 }
