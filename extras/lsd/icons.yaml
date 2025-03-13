@@ -13,8 +13,9 @@ name:
   modèles: 󰅌
   justfile: 󰞷
   nix: 
+  nixos: 󱄅
   features: 
-  
+
 extension:
   gifv: 
   dsf: 

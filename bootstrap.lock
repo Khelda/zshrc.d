@@ -132,11 +132,11 @@
 }
 ,"robbyrussell/oh-my-zsh":{
   "url": "https://github.com/robbyrussell/oh-my-zsh",
-  "rev": "6e7ac0544e71c7b777746cb50f70de68c6495b86",
-  "date": "2025-02-19T12:37:18+01:00",
-  "path": "/nix/store/7hy1mxzm7d1w14rh5cdx3c9h9458kc77-oh-my-zsh",
-  "sha256": "0p149mikcj5q88cqh04x8y0mrmb52y5ch3gcqhdfxadr6vk3b33p",
-  "hash": "sha256-d4w15ja5qe4axOwNyIoXZdVcgUedAIgZQrhINmNNJFw=",
+  "rev": "1c2127727af0ac452292f844ee32306f12906d03",
+  "date": "2025-03-04T11:46:29+01:00",
+  "path": "/nix/store/agj752ad0dyag7g31sghb47vlwm1w7nx-oh-my-zsh",
+  "sha256": "15p5wjff2silv7vqbajy1nya0myd9dy4h3gdmhzybwmlszi8cbga",
+  "hash": "sha256-6i2G4te08uU/rO0NSHxLzVegvA1eqoX32TRq4Zzk5ZY=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
