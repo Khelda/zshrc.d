@@ -72,7 +72,7 @@ function duf() {
 
 function fetch() {
     [[ $TERM == xterm-kitty ]] && kitty @resize-os-window --height 32
-    neofetch --source ${c_fetch_image} --bar_colors
+    clear && fastfetch --logo ${c_fetch_image} --logo-type file
 }
 
 function ifetch() {
