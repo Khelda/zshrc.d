@@ -177,17 +177,8 @@ function watt() {
 }                           # Parse sensors data to gather real-time battery
                             # flow/drain in watts
 
-function dsd-play() {
-    dsf2flac -d -r 352800 -i $1 -o - 2>/dev/null \
-        | ffmpeg -i - -r 352800 -c pcm_s32le -f alsa hw:1
-}                           # Play back DSD files using DSD-over-PCM packing.
-                            # WARNING: May damage equipment and/or hearing if
-                            # played on unsupported hardware. Signal is not PCM
-                            # sound.
-
-function gtree() { # FIXME
+function gtree() { # FIXME slashes cause problems
     local REPO_ROOT=$(git rev-parse --show-toplevel || return 1)
-    # TODO trim useless symbols, they cause lsd to die
     lsd --tree $(while read m; do <<<"-I $m"; done <$REPO_ROOT/.gitignore)
 }
 
