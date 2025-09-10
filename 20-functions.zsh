@@ -71,7 +71,7 @@ function duf() {
 }
 
 function fetch() {
-    [[ $TERM == xterm-kitty ]] && kitty @resize-os-window --height 28
+    [[ $TERM == xterm-kitty ]] && kitty @resize-os-window --height 27
     clear && fastfetch --logo ${c_fetch_image} --logo-type file
 }
 
