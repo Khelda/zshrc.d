@@ -67,7 +67,7 @@ aliases[=]='noglob qalc -c'         # = shorthand for calculator
 
 # Nixie handling and global Nix aliases
 alias nixie="nix run github:nixie-dev/nixie --"
-alias ni="nix profile install"
+alias ni="nix profile add"
 
 # Cli-goodies aliases
 alias mkReadme="echo \"$PWD\" > README.md" # Laziness alias
