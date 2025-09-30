@@ -2,3 +2,5 @@
 enabled=true
 sunrise='~/.config/scripts/light-theme.sh'
 sunset='~/.config/scripts/dark-theme.sh'
+
+# vim: ft=toml
