@@ -123,7 +123,6 @@ function __deps::check_optional() {
     __deps::check   mdcat        mdcat
     __deps::check   jello        jello
     __deps::check   jsonnet      jsonnet
-    __deps::check   pgcli        pgcli
     __deps::check   darkhttpd    darkhttpd
     __deps::check   sops         sops
 }
