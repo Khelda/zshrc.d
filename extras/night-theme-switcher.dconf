@@ -3,4 +3,9 @@ enabled=true
 sunrise='~/.config/scripts/light-theme.sh'
 sunset='~/.config/scripts/dark-theme.sh'
 
+[org/gnome/shell/extensions/nightthemeswitcher/time]
+manual-schedule=true
+sunrise=0
+sunset=0.016666666666666666
+
 # vim: ft=toml

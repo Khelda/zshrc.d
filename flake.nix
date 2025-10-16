@@ -3,10 +3,19 @@
 
   inputs."nixpkgs".url = "github:NixOS/nixpkgs";
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import nixpkgs { inherit system; };
-      in {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
         legacyPackages = pkgs;
         packages.default = self.packages.${system}.zsh;
         packages."optionalDeps" = pkgs.buildEnv {
@@ -98,27 +107,23 @@
             makeWrapper ${pkgs.zsh}/bin/zsh $out/bin/zsh \
               --set ZDOTDIR $out \
               --prefix PATH : ${pkgs.lib.makeBinPath buildInputs} \
-              --set PYTHON_FOR_BAT ${
-                pkgs.python3.withPackages (ps: with ps; [ pixcat ])
-              }/bin/python'';
+              --set PYTHON_FOR_BAT ${pkgs.python3.withPackages (ps: with ps; [ pixcat ])}/bin/python'';
         };
 
         ### One-stop-shop variant with optional dependencies also included
-        packages."zsh-full" = self.packages.${system}.zsh.overrideAttrs
-          (o: rec {
-            buildInputs = [ self.packages.${system}.optionalDeps ]
-              ++ o.buildInputs;
-            installPhase = ''
-              ${o.installPhase} \
-                --prefix PATH : ${pkgs.lib.makeBinPath buildInputs}'';
-          });
+        packages."zsh-full" = self.packages.${system}.zsh.overrideAttrs (o: rec {
+          buildInputs = [ self.packages.${system}.optionalDeps ] ++ o.buildInputs;
+          installPhase = ''
+            ${o.installPhase} \
+              --prefix PATH : ${pkgs.lib.makeBinPath buildInputs}'';
+        });
 
         ### Fully offline variant with locked plugins
-        packages."zsh-full-offline" =
-          self.packages.${system}.zsh-full.overrideAttrs (o: {
-            installPhase = ''
-              ${o.installPhase} \
-               --set ZPLUG_REPOS ${self.packages.${system}.bootstrap}'';
-          });
-      });
+        packages."zsh-full-offline" = self.packages.${system}.zsh-full.overrideAttrs (o: {
+          installPhase = ''
+            ${o.installPhase} \
+             --set ZPLUG_REPOS ${self.packages.${system}.bootstrap}'';
+        });
+      }
+    );
 }
