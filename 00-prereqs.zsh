@@ -163,6 +163,7 @@ then
     __deps::check   wget        wget
     __deps::check   jq          jq
     __deps::check   fzy         fzy
+    __deps::check   tmux        tmux
     # The Nix package does not provide python3 in PATH
     [[ -v PYTHON_FOR_BAT ]] || __deps::check   python3     python3
     __deps::resolve
