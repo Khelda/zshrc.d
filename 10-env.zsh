@@ -13,8 +13,14 @@ export HISTFILE=~/.cache/zsh-history
 export HISTSIZE=1000
 export SAVEHIST=1000
 
-# Pathind environment
-export PATH="$HOME/.gem/ruby/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+# MPLABX paths
+MPLABX_ROOT="/var/opt/microchip" # writing aid
+export MPLABX_PATHS="$MPLABX_ROOT/mplabx/v6.25/mplab_platform/bin"
+
+# Pathing environment
+export PATH="$HOME/.gem/ruby/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH:$MPLABX_PATHS"
+
+# Specific paths
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
                             # Needed for home-manager
 export GOPATH=$HOME/.local  # Lands Go packages right in PATH and prevents

@@ -33,10 +33,20 @@ function colors::ascii() {
 }
 
 function colors::rgb() {
-    val="$1"
-    while [[ $(expr length "$val") -lt 3 ]]; do val="0$val"; done
-    col=$(cat $ZSH_CONFIG_PATH/res/colors.csv | grep -F "$val;")
-    print -P "%K{$val}  %k%F{$val}${(l:6::0:)col}"
+    val=$1 # ascii color
+    # fetching color
+    col_line=$(cat $ZSH_CONFIG_PATH/res/colors.csv | grep "$val;")
+    if [[ -z $col_line ]]
+    then
+        >&2 echo "Color $val is not an ascii color"
+        return
+    fi
+    # parsing color line
+    ascii_col=$(echo $col_line | cut -d ';' -f 1)
+    rgb_col=$(echo $col_line | cut -d ';' -f 2)
+    # printing the fetched color
+    print -Pn "%K{$rgb_col}  %k%F{$ascii_col}$rgb_col%f " \
+        ${${(M)$(0):#3}:+$'\n'}
 }
 
 # vim: ft=zsh

@@ -12,7 +12,8 @@ function _get_theme() {
         head -n1 $rundir/theme | grep .
     elif ((IS_DARWIN))
     then
-        ( defaults read -g AppleInterfaceStyle 2>/dev/null || echo 'light' ) | tr '[:upper:]' '[:lower:]'
+        ( defaults read -g AppleInterfaceStyle 2>/dev/null || echo 'light' ) | \
+            tr '[:upper:]' '[:lower:]'
     else
         echo 'dark' # failsafe value
     fi
