@@ -51,7 +51,7 @@ function colors::ascii() {
         fi
     done
     # output a color
-    if [[ $foundDist -ee 0 ]]
+    if [[ $foundDist -le 0 ]]
     then
         >&2 echo "Found exact color match :"
         print -Pn "%K{$color}  %k%F{$color}$color%f " \
@@ -65,8 +65,12 @@ function colors::ascii() {
 
 function colors::rgb() {
     val=$1 # ascii color
+    if [[ ${#val} -eq 2 ]]
+    then
+        val="0$val"
+    fi
     # fetching color
-    col_line=$(cat $ZSH_CONFIG_PATH/res/colors.csv | grep "$val;")
+    col_line=$(cat $ZSH_CONFIG_PATH/res/colors.csv | grep "$val;") # FIXME
     if [[ -z $col_line ]]
     then
         >&2 echo "Color $val is not an ascii color"
