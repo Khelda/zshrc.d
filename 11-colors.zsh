@@ -66,7 +66,7 @@ function colors::ascii() {
 function colors::rgb() {
     val=$1 # ascii color
     # length fix
-    if [[ ${#val} -lq 2 ]]
+    if [[ ${#val} -le 2 ]]
     then
         if [[ ${#val} -eq 1 ]]
         then
