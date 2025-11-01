@@ -65,9 +65,15 @@ function colors::ascii() {
 
 function colors::rgb() {
     val=$1 # ascii color
-    if [[ ${#val} -eq 2 ]]
+    # length fix
+    if [[ ${#val} -lq 2 ]]
     then
-        val="0$val"
+        if [[ ${#val} -eq 1 ]]
+        then
+            val="00$val"
+        else
+            val="0$val"
+        fi
     fi
     # fetching color
     col_line=$(cat $ZSH_CONFIG_PATH/res/colors.csv | grep "$val;") # FIXME
