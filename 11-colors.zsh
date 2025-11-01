@@ -24,12 +24,43 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 [ -f "$HOME/.zsh-colors" ] && source "$HOME/.zsh-colors"
 
 # ASCII colors, useful sometimes
-function colors::ascii() {
+function colors::palette() {
     for i in {0..255}
     do
         print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " \
             ${${(M)$((i%6)):#3}:+$'\n'}
     done
+}
+
+function colors::ascii() {
+    val=$1 # rgb color
+    foundDist=1000
+    color=""
+    for line in $(cat $ZSH_CONFIG_PATH/res/colors.csv | grep "#")
+    do
+        # parsing color line
+        ascii_col=$(echo $line | cut -d ';' -f 1)
+        rgb_col=$(echo $line | cut -d ';' -f 2)
+        # distance comparison
+        dist=$($ZSH_CONFIG_PATH/res/colors.py $val $rgb_col)
+        if [[ $foundDist -ge $dist ]]
+        then
+            # found closer color
+            foundDist=$dist
+            color=$ascii_col
+        fi
+    done
+    # output a color
+    if [[ $foundDist -ee 0 ]]
+    then
+        >&2 echo "Found exact color match :"
+        print -Pn "%K{$color}  %k%F{$color}$color%f " \
+            ${${(M)$(0):#3}:+$'\n'}
+    else
+        >&2 echo "Couldn't find match for $val. Closest color is :"
+        print -Pn "%K{$color}  %k%F{$color}$color%f " \
+            ${${(M)$(0):#3}:+$'\n'}
+    fi
 }
 
 function colors::rgb() {
