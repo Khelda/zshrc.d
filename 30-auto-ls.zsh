@@ -40,7 +40,20 @@ function auto-ls-onefetch() {
         else gfi=$c_gitfetch_image
         fi
 
-        onefetch --image-protocol kitty --image $gfi --no-color-palette \
+        # fetching shell information
+        shellname=$(basename "/"$(ps -o cmd -f -p $(cat /proc/$(echo $$)/stat \
+            | cut -d \  -f 4) | tail -1 | sed 's/ .*$//'))
+        backend=""
+
+        # defining backend image-protocol
+        if [[ $shellname == "kitty" ]]
+        then
+            backend="kitty"
+        else
+            backend="iterm"
+        fi
+
+        onefetch --image-protocol $backend --image $gfi --no-color-palette \
             --disabled-fields churn description dependencies contributors head created
         git status -s
         echo

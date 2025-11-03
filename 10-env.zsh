@@ -44,7 +44,7 @@ export GIT_CONFIG_SYSTEM=$ZSH_CONFIG_PATH/extras/git/config
 export XDG_CONFIG_DIRS=$ZSH_CONFIG_PATH/extras:$XDG_CONFIG_DIRS
 
 AUTO_NOTIFY_THRESHOLD=120
-AUTO_NOTIFY_IGNORE+=(ipython tmux nix-shell kitty-color goyo ranger mpv nethogs bat cd)
+AUTO_NOTIFY_IGNORE+=(ipython tmux nix-shell kitty-color goyo ranger mpv nethogs bat cd fg nvim)
 
 # podman utility
 export TMPDIR=/tmp
