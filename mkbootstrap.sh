@@ -36,5 +36,5 @@ _prefetch_git() {
       first=0
     done
   echo -n "}"
-} > bootstrap.lock
+} > ./nixos/bootstrap.lock
 
