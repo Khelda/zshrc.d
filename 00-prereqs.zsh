@@ -33,7 +33,7 @@ function __deps::resolve() {
             && {
             if [[ -f $HOME/.nix-profile/manifest.json ]]
             then
-                nix profile install nixpkgs#${:-${^__FAILED_DEPS}}
+                nix profile add nixpkgs#${:-${^__FAILED_DEPS}}
             else
                 nix-env -iA ${:-nixpkgs.${^__FAILED_DEPS}}
             fi
@@ -61,7 +61,7 @@ function __deps::resolve_optional() {
             && {
             if [[ -f $HOME/.nix-profile/manifest.json ]]
             then
-                nix profile install nixpkgs#${:-${^__FAILED_DEPS}}
+                nix profile add nixpkgs#${:-${^__FAILED_DEPS}}
             else
                 nix-env -iA ${:-nixpkgs.${^__FAILED_DEPS}}
             fi

@@ -178,8 +178,9 @@ function watt() {
 }                           # Parse sensors data to gather real-time battery
                             # flow/drain in watts
 
-function gtree() { # FIXME slashes cause problems
+function gtree() { # FIXME slashes and hastags cause problems
     local REPO_ROOT=$(git rev-parse --show-toplevel || return 1)
+    # TODO find a way to trim this line
     lsd --tree $(while read m; do <<<"-I $m"; done <$REPO_ROOT/.gitignore)
 }
 
