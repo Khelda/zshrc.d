@@ -74,6 +74,10 @@ alias mkReadme="echo \"$PWD\" > README.md" # Laziness alias
 alias shut="shutdown now"
 alias dhserve="darkhttpd ."
 
+# flatpak aliases
+alias ftu="flatpak update"
+alias fts="flatpak search"
+
 # Podman aliases
 alias podman="podman --storage-driver=overlay"
 alias podman-compose="podman-compose --podman-args=\"--root=$CONTAINERS_ROOT --storage-driver=overlay\""

@@ -48,5 +48,6 @@ local LogCmd(service, icon) =
                                                      cmd),
   Menu(name, icon, content):: Menu(name, icon, content),
   SystemdService(label, icon, name):: SystemdService(label, icon, name),
+  Switch(label, icon, name, start, stop, check):: Switch(label, icon, name, start, stop, check),
   LogCmd(service, icon):: LogCmd(service, icon),
 }
