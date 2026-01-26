@@ -5,9 +5,9 @@ declare -A colors_light colors_dark
 
 # Icons paths
 ICONS_PATH="$HOME/.config/fetch_imgs" # root path
-c_fetch_image[dark]="$ICONS_PATH/fetch_image.png"
-c_gitfetch_nix_shell_image="$ICONS_PATH/gitfetch_nix_shell_image.png"
-c_gitfetch_image="$ICONS_PATH/gitfetch_image.png"
+c_fetch_image[dark]="$ICONS_PATH/fetch_image.jpg"
+c_gitfetch_nix_shell_image="$ICONS_PATH/gitfetch_nix_shell_image.jpg"
+c_gitfetch_image="$ICONS_PATH/gitfetch_image.jpg"
 
 # Opacity values for _kitty_color
 c_kitty_opacity[dark]="0.8"
