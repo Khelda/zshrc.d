@@ -20,6 +20,9 @@ export MPLABX_PATHS="$MPLABX_ROOT/mplabx/v6.25/mplab_platform/bin"
 # Pathing environment
 export PATH="$HOME/.gem/ruby/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH:$MPLABX_PATHS"
 
+# XDG utilities
+export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
+
 # Specific paths
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
                             # Needed for home-manager

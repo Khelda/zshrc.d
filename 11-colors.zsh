@@ -15,7 +15,7 @@ c_kitty_opacity[light]="0.8"
 
 # Colorscheme
 colors_light[goyo_bg]="#d9d9da"
-colors_dark[goyo_bg]="#4d4d4d"
+colors_dark[goyo_bg]="#3d2b08"
 colors_dark[pgcli_bg]="#444444"
 colors_light[pgcli_bg]="#444444"
 
