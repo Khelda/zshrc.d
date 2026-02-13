@@ -44,8 +44,6 @@ export DIRENV_LOG_FORMAT=$'\e[1;37mdirenv: \e[0;37m%s\e[0m'
 # Git configuration overlay
 export GIT_CONFIG_SYSTEM=$ZSH_CONFIG_PATH/extras/git/config
 
-export XDG_CONFIG_DIRS=$ZSH_CONFIG_PATH/extras:$XDG_CONFIG_DIRS
-
 AUTO_NOTIFY_THRESHOLD=120
 AUTO_NOTIFY_IGNORE+=(ipython tmux nix-shell kitty-color goyo ranger mpv nethogs bat cd fg nvim)
 
