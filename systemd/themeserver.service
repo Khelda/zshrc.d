@@ -1,9 +1,0 @@
-[Unit]
-Description=Serve desktop theme over TCP
-
-[Service]
-ExecStart=sh -c 'exec $HOME/.config/scripts/themeserver.sh'
-Restart=on-failure
-
-[Install]
-WantedBy=graphical-session.target

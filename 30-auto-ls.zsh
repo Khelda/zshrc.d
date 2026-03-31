@@ -54,7 +54,13 @@ function auto-ls-onefetch() {
         fi
 
         onefetch --image-protocol $backend --image $gfi --no-color-palette \
-            --disabled-fields churn description dependencies contributors head created
+            < $TTY >& $TTY \
+            --disabled-fields   churn           \
+                                description     \
+                                dependencies    \
+                                contributors    \
+                                head            \
+                                created
         git status -s
         echo
     fi

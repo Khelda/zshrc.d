@@ -4,19 +4,6 @@
 
 typeset -a __MISSING_CONFS
 
-
-function __extras::systemd_enable() {
-    for u in $EXTRAS_CONFIG_PATH/systemd/*
-    do
-        if ! [[ -e $HOME/.config/systemd/user/$u:t ]]
-        then
-            mkdir -p $HOME/.config/systemd/user
-            ln -s $u $HOME/.config/systemd/user/$u:t
-            systemctl --user enable $u:t
-        fi
-    done
-}
-
 function __extras::check() {
     [[ -f $HOME/.zsh_has_extras ]] && return
     for d in $EXTRAS_CONFIG_PATH/extras/*
@@ -75,7 +62,6 @@ function install-extras() {
         >&2 echo -n "Proceed? [y/N] "
         if read -q
         then
-            pgrep systemd >/dev/null && __extras::systemd_enable
             for d in ${__MISSING_CONFS[@]}
             do
                 __extras::install $d
@@ -111,7 +97,10 @@ then
         EXTRAS_CONFIG_PATH=$ZSH_CONFIG_PATH
     fi
 
-    [[ -f $HOME/.zsh_asked_extras ]] || \
-        FIRST=1 EXTRAS_CONFIG_PATH=$EXTRAS_CONFIG_PATH install-extras
+    if [[ -f $HOME/.zsh_asked_extras ]] then
+        # Nothing
+    else
+        export EXTRAS_CONFIG_PATH=$EXTRAS_CONFIG_PATH && install-extras
+    fi
 }
 fi

@@ -4,7 +4,7 @@ declare -A c_kitty_opacity
 declare -A colors_light colors_dark
 
 # Icons paths
-ICONS_PATH="$HOME/.config/fetch_imgs" # root path
+ICONS_PATH="$ZSH_CONFIG_PATH/res/fetch_imgs" # root path
 c_fetch_image[dark]="$ICONS_PATH/fetch_image.jpg"
 c_gitfetch_nix_shell_image="$ICONS_PATH/gitfetch_nix_shell_image.jpg"
 c_gitfetch_image="$ICONS_PATH/gitfetch_image.jpg"
