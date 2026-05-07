@@ -1,6 +1,8 @@
 #!/bin/zsh
 #
 # Auto-start configuration script for the Z Shell, modular edition.
+# This is not meant to be run from this directory, rather copied to the user's
+# home directory.
 #
 
 # TODO: edit those variables before use !

@@ -77,6 +77,7 @@ alias dhserve="darkhttpd ."
 # flatpak aliases
 alias ftu="flatpak update"
 alias fts="flatpak search"
+alias ftr="flatpak remove"
 
 # Podman aliases
 alias podman="podman --storage-driver=overlay --root=$CONTAINERS_ROOT"
