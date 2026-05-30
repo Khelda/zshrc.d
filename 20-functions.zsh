@@ -76,12 +76,6 @@ function fetch() {
     clear && fastfetch --logo ${c_fetch_image} --logo-type file
 }
 
-function ifetch() {
-    local image=$1
-    shift 1
-    neofetch --source $image "$@"
-}
-
 function pperf() {
     powerprofilesctl launch -p performance "$@"
 }
@@ -177,12 +171,6 @@ function watt() {
     qalc -t $(sensors -A BAT0-acpi-0 | cut -sd' ' -f2- | sed ':a; N; $!ba; s/\n/*/g')
 }                           # Parse sensors data to gather real-time battery
                             # flow/drain in watts
-
-function gtree() { # FIXME slashes and hastags cause problems
-    local REPO_ROOT=$(git rev-parse --show-toplevel || return 1)
-    # TODO find a way to trim this line
-    lsd --tree $(while read m; do <<<"-I $m"; done <$REPO_ROOT/.gitignore)
-}
 
 # Neovim trigger discipline
 function :qa!() {

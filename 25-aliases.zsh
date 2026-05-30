@@ -37,6 +37,12 @@ alias murder="kill -9"
 alias pmurder="pkill -9"
 alias murderall="killall -9"        # SIGKILL ftw
 
+# Extra process aliases
+alias stop="kill -19"
+alias pstop="pkill -19"
+alias cont="kill -18"
+alias pcont="pkill -18"
+
 # Null terminator
 alias anihilate='shred -f -n 40 -z' # Rewrite perms, shred 40 passes and zero out
 
@@ -59,7 +65,7 @@ alias ino="arduino-cli"
 
 alias zplug="LANG=C.UTF-8 zplug"    # Fix for zplug/zplug#419
 
-
+# Calculator
 alias calc="qalc"
 aliases[=]='noglob qalc -c'         # = shorthand for calculator
 
