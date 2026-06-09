@@ -11,6 +11,9 @@
     # revert aliases
     revert = reset --hard
     rollback = reset --hard HEAD~1
+[core]
+    eol = lf
+    autocrlf = false
 [color]
     ui = auto
 [pull]
@@ -25,5 +28,3 @@
     allow = always
 [init]
     defaultBranch = master
-
-# vim: ft=gitconfig
