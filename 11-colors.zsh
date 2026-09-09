@@ -15,7 +15,7 @@ c_kitty_opacity[light]="0.8"
 
 # Colorscheme
 colors_light[goyo_bg]="#d9d9da"
-colors_dark[goyo_bg]="#574c2e"
+colors_dark[goyo_bg]="#3c3c3c"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
