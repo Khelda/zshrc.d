@@ -15,7 +15,7 @@ c_kitty_opacity[light]="0.8"
 
 # Colorscheme
 colors_light[goyo_bg]="#d9d9da"
-colors_dark[goyo_bg]="#0f2228"
+colors_dark[goyo_bg]="#574c2e"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
@@ -85,7 +85,7 @@ function colors::rgb() {
     rgb_col=$(echo $col_line | cut -d ';' -f 2)
     # printing the fetched color
     print -Pn "%K{$rgb_col}  %k%F{$ascii_col}$rgb_col%f " \
-        ${${(M)$(0):#3}:+$'\n'}
+        ${${(M)$(0):#3}:+$'\n'} # FIXME
 }
 
 # vim: ft=zsh

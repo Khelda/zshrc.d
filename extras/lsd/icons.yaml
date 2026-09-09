@@ -41,6 +41,7 @@ extension:
   bib: 󰂺
   tex: 󰊄
   sty:         # LaTeX style classes
+  typ:         # Typst files
   oga: 
   aiff: 
   wv: 
