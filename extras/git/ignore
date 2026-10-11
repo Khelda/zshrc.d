@@ -1,5 +1,6 @@
 # Incremental build files from ccls language server
 .ccls-cache
+kls_database.db
 
 # Nix build symlink
 result

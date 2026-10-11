@@ -53,4 +53,3 @@ fi
 compinit -u                 # Disables annoying "insecure directories" nag
 
 zplug load
-

@@ -88,3 +88,6 @@ alias ftr="flatpak remove"
 # Podman aliases
 alias podman="podman --storage-driver=overlay --root=$CONTAINERS_ROOT"
 alias podman-compose="podman-compose --podman-args=\"--root=$CONTAINERS_ROOT --storage-driver=overlay\""
+
+# Fix for Android bullshit
+alias android="android --no-metrics"

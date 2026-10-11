@@ -17,8 +17,11 @@ export SAVEHIST=1000
 MPLABX_ROOT="/var/opt/microchip" # writing aid
 export MPLABX_PATHS="$MPLABX_ROOT/mplabx/v6.25/mplab_platform/bin"
 
+# Android paths
+export ANDROID_HOME="$HOME/Android/Sdk/"
+
 # Pathing environment
-export PATH="$HOME/.gem/ruby/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH:$MPLABX_PATHS"
+export PATH="$HOME/.gem/ruby/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH:$MPLABX_PATHS:$ANDROID_HOME/cmdline_tools/latest/bin:$ANDROID_HOME/platform-tools"
 
 # XDG utilities
 export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
@@ -53,5 +56,3 @@ export CONTAINERS_ROOT=$HOME/.local/share/containers
 
 # Small locale fix
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
-
-# TODO add templating toolkit

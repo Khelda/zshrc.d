@@ -13,9 +13,11 @@ c_gitfetch_image="$ICONS_PATH/gitfetch_image.jpg"
 c_kitty_opacity[dark]="0.8"
 c_kitty_opacity[light]="0.8"
 
-# Colorscheme
+# Colorscheme for extra programs
 colors_light[goyo_bg]="#d9d9da"
+colors_light[ssh_bg]="#6f664d"
 colors_dark[goyo_bg]="#3c3c3c"
+colors_dark[ssh_bg]="#6f664d"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
@@ -87,5 +89,3 @@ function colors::rgb() {
     print -Pn "%K{$rgb_col}  %k%F{$ascii_col}$rgb_col%f " \
         ${${(M)$(0):#3}:+$'\n'} # FIXME
 }
-
-# vim: ft=zsh

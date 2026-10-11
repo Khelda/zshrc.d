@@ -22,4 +22,3 @@ zstyle ':completion:*' file-list        all
 zstyle ':compinstall'  filename         "$ZSH_CONFIG_PATH/02-zstyle.zsh"
 
 autoload -Uz compinit       # Enables the smart completion engine configured above
-
